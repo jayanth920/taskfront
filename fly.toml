@@ -1,13 +1,10 @@
-# fly.toml file for taskboard frontend
-
 app = "taskboard"
-primary_region = "iad"
+primary_region = "dfw"  # Dallas
 
 kill_signal = "SIGINT"
 kill_timeout = 5
 
 [build]
-  # If using the Dockerfile we discussed
   dockerfile = "Dockerfile"
 
 [env]
