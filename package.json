@@ -9,6 +9,7 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@flydotio/dockerfile": "^0.7.10",
     "@hello-pangea/dnd": "^18.0.1",
     "axios": "^1.12.2",
     "next": "15.5.4",
@@ -27,5 +28,12 @@
     "eslint-config-next": "15.5.4",
     "tailwindcss": "^4",
     "typescript": "^5"
+  },
+  "dockerfile": {
+    "secrets": [
+      "NEXT_PUBLIC_API_URL",
+      "NEXT_PUBLIC_WS_URL",
+      "NEXT_PUBLIC_AUTH_TOKEN"
+    ]
   }
 }

@@ -25,7 +25,7 @@ const COLUMNS: { id: Task["column"]; title: string }[] = [
 ];
 
 const api = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_API_URL || "http://localhost:4000",
+  baseURL: process.env.NEXT_PUBLIC_API_URL,
 });
 
 const fetcher = (url: string) =>

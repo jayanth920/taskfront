@@ -34,7 +34,7 @@ const COLUMNS = [
 
 // Create axios instance with auth
 const api = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_API_URL || "http://localhost:4000",
+  baseURL: process.env.NEXT_PUBLIC_API_URL,
 });
 
 // Add auth token to requests
@@ -66,7 +66,7 @@ export default function Board({ boardId, onBack }: BoardProps) {
   // WebSocket - Simplified like your original
   useEffect(() => {
     const token = localStorage.getItem('token');
-    const wsUrl = process.env.NEXT_PUBLIC_WS_URL || "ws://localhost:4000";
+    const wsUrl = process.env.NEXT_PUBLIC_WS_URL;
     
     const ws = new WebSocket(`${wsUrl}?token=${token}&boardId=${boardId}`);
     wsRef.current = ws;

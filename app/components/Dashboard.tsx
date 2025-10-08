@@ -30,7 +30,7 @@ type User = {
 };
 
 const api = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_API_URL || "http://localhost:4000",
+  baseURL: process.env.NEXT_PUBLIC_API_URL,
 });
 
 api.interceptors.request.use((config: any) => {
@@ -225,7 +225,7 @@ export default function Dashboard() {
               value={inviteEmail}
               onChange={(e) => setInviteEmail(e.target.value)}
               placeholder="Enter email address"
-              className="w-full px-3 py-2 border rounded mb-4"
+              className="w-full px-3 py-2 border rounded mb-4 text-black"
             />
             
             <div className="flex gap-2 justify-end">
