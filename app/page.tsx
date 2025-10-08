@@ -1,11 +1,28 @@
-import Board from "./components/Board";
-export default function Page() {
-  return (
-    <main className="min-h-screen bg-slate-50 p-6">
-      <div className="max-w-6xl mx-auto">
-        <h1 className="text-3xl font-bold mb-4 text-cyan-500">Realtime Task Board</h1>
-        <Board />
+// app/page.tsx
+"use client";
+import { useAuth } from './contexts/AuthContext';
+import Login from './components/Login';
+import Dashboard from './components/Dashboard';
+import { AuthProvider } from './contexts/AuthContext';
+
+function AppContent() {
+  const { user, loading } = useAuth();
+
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-lg">Loading...</div>
       </div>
-    </main>
+    );
+  }
+
+  return user ? <Dashboard /> : <Login />;
+}
+
+export default function Home() {
+  return (
+    <AuthProvider>
+      <AppContent />
+    </AuthProvider>
   );
 }
